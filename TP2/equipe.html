@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire d'équipe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8GEtdljGgrf37hyD0aQGuNCt1Uzdd7Ng&libraries=places&callback=initAutocomplete&signed_in=true"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdjj6NysMVCT03qmuP5xvp_dqXcXzWkcY&callback=initMap"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body onload="loadMe();">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img class="Logo-Img" src="images/equipe.png" alt="Bootstrap" width="30" height="24">
+          </a>
+        </div>
+      </nav>
+      <h1>Mon équipe :</h1>
+      <table>
+        <tr id="conteneur">
+          <td>
+            <div class="card" id="me" style="width: 18rem;">
+              <img src="images/moi.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Moi</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Latitude : <span id="latE">45.29723585</span></li>
+                <li class="list-group-item">Longitude : <span id="longE">21.26458265</span></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <form class="nbPerson">
+        <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre de participants excluant vous : </label>
+            <div class="col-sm-10">
+              <select name="numberPerson" id="nbPers">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" onclick="addTeammates();">Créer l'équipe</button>
+            <button type="button" class="btn btn-primary" onclick="deleteTeam();">Supprimer l'équipe</button>
+            <button type="button" class="btn btn-primary" onclick="meetingPlace();">Determiner le lieux de la réunion</button>
+          </div>
+      </form>
+      <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118930.09998641865!2d-157.88164571506707!3d21.32817355292647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c00183b8cc3464d%3A0x4b28f55ff3a7976c!2zSG9ub2x1bHUsIEhhd2HDrywgw4l0YXRzLVVuaXM!5e0!3m2!1sfr!2sca!4v1694098061004!5m2!1sfr!2sca" width="1500" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <script src="js/app.js"></script>
+</body>
+</html>
